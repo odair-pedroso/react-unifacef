@@ -7,8 +7,6 @@ axios.interceptors.request.use(async (config) => {
 }, (error) => {
   return Promise.reject(error);
 });
-
-
 axios.interceptors.response.use(async (config) => {
   loadingOff();
   return config;
