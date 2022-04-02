@@ -16,11 +16,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-<<<<<<< HEAD
           Learn React Odair
-=======
-          Learn React
->>>>>>> 001428f67feee717c0a29085df10e6cfe8a10d87
         </a>
       </header>
     </div>
