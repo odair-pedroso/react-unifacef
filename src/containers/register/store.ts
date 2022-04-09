@@ -1,7 +1,10 @@
-import { observable, action } from 'mobx';
+import { observable, action, makeAutoObservable } from 'mobx';
 import { assign } from '../../utils/object.util';
 
 export default class RegisterStore {
+  constructor() {
+    makeAutoObservable(this)
+  }
   @observable zipcode?: number;
   @observable github?: string;
 
