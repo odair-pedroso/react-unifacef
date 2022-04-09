@@ -11,6 +11,7 @@ import './apis/axios.api';
 import './plugins/sentry.plugin';
 import Loading from './components/loading';
 
+
 const rootElement = document.getElementById('root');
 const browserHistory = createBrowserHistory();
 
