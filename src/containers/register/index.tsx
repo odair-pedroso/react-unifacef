@@ -16,7 +16,8 @@ interface Props {
 export default class Register extends React.Component<Props> {
 
   render() {
-    const { zipcode, handleForm, github } = this.props.register;
+
+    const { handleForm, zipcode, github } = this.props.register;
 
     return (
       <Container>
@@ -26,33 +27,33 @@ export default class Register extends React.Component<Props> {
               <Header color='blue' as='h2'>
                 <Header.Content>
                   Register
-                  <Header.Subheader>Simulação de formulário</Header.Subheader>
+                 <Header.Subheader>Simulação de formulário</Header.Subheader>
                 </Header.Content>
               </Header>
             </Grid.Column>
           </Grid.Row>
         </Grid>
         <Form>
-          <Form.Group widths='equal' style={{ alignItems: 'flex-end' }} >
+          <Form.Group widths='equal'>
             <Form.Field>
-              <label>Informe o CEP:</label>
-              <input value={zipcode || ''} maxLength={8} name='zipcode' onChange={handleForm} placeholder='Ex 14405123' />
+              <label>Informe o CEP</label>
+              <input value={zipcode || ''} maxLength={8} name='zipcode' onChange={handleForm} placeholder='Ex: 14405123' />
             </Form.Field>
             <Form.Field>
               <Cep zipCode={zipcode} />
             </Form.Field>
           </Form.Group>
-          <Form.Group widths='equal' style={{ alignItems: 'flex-end' }} >
+          <Form.Group widths='equal'>
             <Form.Field>
-              <label>Informe o seu github:</label>
-              <input value={github || ''} maxLength={100} name='github' onChange={handleForm} placeholder='Ex juninmd' />
+              <label>Informe o seu github</label>
+              <input value={github || ''} maxLength={20} name='github' onChange={handleForm} placeholder='Ex: juninmd' />
             </Form.Field>
             <Form.Field>
               <Github userName={github} />
             </Form.Field>
           </Form.Group>
         </Form>
-      </Container>
-    )
+      </Container >
+    );
   }
 }

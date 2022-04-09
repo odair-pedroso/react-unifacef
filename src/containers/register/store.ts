@@ -1,4 +1,5 @@
-import { observable, action, makeAutoObservable } from 'mobx';
+import { action, makeAutoObservable, observable } from 'mobx';
+
 import { assign } from '../../utils/object.util';
 
 export default class RegisterStore {
@@ -11,8 +12,8 @@ export default class RegisterStore {
   @action handleForm = (event: any, select?: any) => {
     const { name, value } = select || event.target;
     assign(this, name, value);
-  }
-}
+  };
 
+}
 const register = new RegisterStore();
 export { register };
