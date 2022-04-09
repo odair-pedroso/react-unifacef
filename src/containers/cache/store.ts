@@ -1,7 +1,11 @@
-import { observable, action } from 'mobx';
+import { observable, action, makeAutoObservable } from 'mobx';
 import { assign } from '../../utils/object.util';
 
 export default class CacheStore {
+
+  constructor() {
+    makeAutoObservable(this)
+  }
 
   @observable session: string | null = '';
 
