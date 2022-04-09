@@ -20,7 +20,11 @@ export default class StarWars extends React.Component<Props> {
 
   render() {
 
-   const { films } = this.props.starWars;
+    const openDetails = (id: number) => {
+      this.props.router.setHistory(`/star-wars/${id}`)
+    }
+
+    const { films } = this.props.starWars;
 
     return (
       <Container>
@@ -30,7 +34,7 @@ export default class StarWars extends React.Component<Props> {
               <Header color='blue' as='h2'>
                 <Header.Content>
                   Star Wars
-                 <Header.Subheader>Lista de filmes</Header.Subheader>
+                  <Header.Subheader>Lista de filmes</Header.Subheader>
                 </Header.Content>
               </Header>
             </Grid.Column>
@@ -39,7 +43,7 @@ export default class StarWars extends React.Component<Props> {
         <Card.Group itemsPerRow={2}>
           {films.map((film, index) => {
             return (
-              <Card key={index}>
+              <Card key={index} onClick={() => openDetails(film.id)}>
                 <Image src={film.photo} wrapped ui={false} size='small' />
                 <Card.Content>
                   <Card.Meta>{film.title}</Card.Meta>
