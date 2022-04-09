@@ -1,7 +1,10 @@
-import { action, observable } from 'mobx';
+import { action, makeAutoObservable, observable } from 'mobx';
 import { getFilmById } from '../../apis/star-wars.api';
 
 export default class StarWarsDetailsStore {
+  constructor(){
+    makeAutoObservable(this);
+  }
   @observable film: any = {};
 
   @action buildFilmById = async (id: number) => {
